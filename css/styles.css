@@ -1,0 +1,294 @@
+body{
+	display: flex;
+	flex-direction: column;
+	font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+	margin: 0;
+	min-height: 100vh;
+}
+
+a{
+	text-decoration: none;
+}
+
+.navbar{
+	background-color: #0C090A;
+	min-height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	z-index: 10;
+}
+
+	.toggle{
+		display: none;
+		padding: 11px 20px;
+	}
+	.toggle label{
+		cursor: pointer;
+	}
+	.toggle label div{
+		background-color: #FFFFFF;
+		width: 20px;
+		height: 2px;
+		margin: 5px;
+	}
+	#burger{
+		display: none;
+	}
+
+	.navlinks{
+		margin: 0;
+		padding: 0;
+	}
+	.navlinks a{
+		color: #FFFFFF;
+		display: block;
+		float: left;
+		padding: 15px 20px;
+		text-align: center;
+		/* transition: all 0.5s ease 0.2s; */
+	}
+	.navlinks a:hover{
+		background-color: #CEC8FF;
+		color: black;
+	}
+
+
+/* Home page */
+.cover{
+	position: relative;
+	padding-top: 50px;
+	text-align: center;
+}
+
+	#sunset{
+		height: calc(100vh - 50px);
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.centered-text{
+		color: #0C090A;
+		position: absolute;
+		top: 35%;
+		left: 50%;
+		font-size: 65px;
+		font-weight: 550;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	.image__overlay{
+		background: rgba(0, 0, 0, 0.75);
+		color: #EBDDE2;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: calc(100vh - 50px);
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 1s;
+		padding-top: 50px;
+	}
+	.image__overlay:hover{
+		opacity: 1;
+	}
+	.description{
+		font-size: 1.5em;
+		margin-right: 230px;
+		margin-left: 230px;
+		text-align: center;
+	}
+
+.column{
+  	max-width: 1300px;
+	margin: 30px 50px;
+  	line-height: 1.65;
+  	display: flex;
+	column-gap: 45px;
+	text-align: justify;
+}
+
+	.column h3{
+		margin-bottom: 0px;
+		color: #483D8B;
+	}
+	.column p{
+		margin-top: 5px;
+	}
+
+/* About page */
+#me{
+	height: calc(100vh - 50px);
+	width: 100%;
+	object-fit: cover;
+}
+
+.about{
+	max-width: 1300px;
+	margin: 20px 50px;
+  	line-height: 1.65;
+  	display: flex;
+	column-gap: 45px;
+	position: relative;
+}
+
+	.about h3{
+		margin-bottom: 0px;
+		color: #483D8B;
+	}
+	.about p{
+		margin-top: 5px;
+	}
+	.about a{
+		color: inherit;
+	}
+	.about a:hover{
+		color: #6960EC;
+	}
+
+	.intro{
+		flex: 2;
+		order: 1;
+		text-align: justify;
+	 }
+	 .works{
+		 flex: 2;
+		 order: 2;
+		 text-align: justify;
+	 }
+	.contacts{
+		flex: 1;
+		order: 3;
+	}
+
+/* Blog page */
+.blog-cover{
+	margin-top: 50px;
+	height: calc(100vh - 50px);
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	
+	background-image: url('../images/typewriter.jpg');
+	background-size: auto 100%;
+	background-position: center;
+}
+
+.blog-cover h1 {
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke: 3px #0C090A;
+
+	font-size: 55px;
+	font-weight: 700;
+	text-align: center;
+}
+
+	#typewriter{
+		height: calc(100vh - 50px);
+		width: 100%;
+		object-fit: cover;
+	}
+
+/* Article 1 */
+.background{
+
+	position: fixed;
+	width: 100%;
+	height: 100%;
+
+    justify-content: center;
+	align-items: center;
+
+	background-image: url('../images/typewriter.jpg');
+	background-size: 20%;
+	background-position: center;
+	background-attachment: fixed;
+
+	opacity: 50%;
+
+	z-index: -1;
+}
+
+.blog-content h1{
+	text-align: center;
+	font-weight: 600;
+}
+
+.blog-content h3{
+	font-style: italic;
+	font-weight: 500;
+}
+
+.blog-content{
+	flex-grow: 1;
+}
+
+.blog-content > .content {
+	text-align: justify;
+	margin: 70px 120px;
+	padding: 30px 40px;
+	line-height: 1.4;
+	background-color: #FFFFFF;
+}
+
+/* Photography page */
+
+
+/* Responsive elements */
+@media only screen and (max-width: 1024px){
+	.column{
+		display: block;
+		margin-bottom: 30px;
+	}
+	.about{
+		display: block;
+		margin: 30px 50px;
+	}
+	#me{
+		height: 100%;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.navlinks{
+		position: fixed;
+		float: none;
+		left: -40%;
+		top: 50px;
+		bottom: 0px;
+		width: 40%;
+		background-color: #0C090A;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: transform 0.7s ease-in;
+	}
+	.toggle{
+		display: block;
+	}
+	#burger:checked + .navlinks{
+		transform: translateX(+100%);
+	}
+	.description{
+		font-size: 1.5em;
+		margin-right: 130px;
+		margin-left: 130px;
+	}
+}
+
+footer{
+	background-color: black;
+	color: white;
+	padding: 3px;
+	text-align: center;
+}
